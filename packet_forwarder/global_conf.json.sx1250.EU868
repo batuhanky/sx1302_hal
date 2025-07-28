@@ -89,10 +89,10 @@
 
     "gateway_conf": {
         "gateway_ID": "AA555A0000000000",
-        /* change with default server address/ports */
-        "server_address": "localhost",
-        "serv_port_up": 1730,
-        "serv_port_down": 1730,
+        /* change with default server address/ports */  
+        "server_address": "localhost",                      
+        "serv_port_up": 1700,                               /*WM1302 Port Change*/
+        "serv_port_down": 1700,                             /*WM1302 Port Change*/
         /* adjust the following parameters for your network */
         "keepalive_interval": 10,
         "stat_interval": 30,
@@ -102,7 +102,7 @@
         "forward_crc_error": false,
         "forward_crc_disabled": false,
         /* GPS configuration */
-        "gps_tty_path": "/dev/ttyS0",
+        "gps_tty_path": "/dev/ttyUSB1",                     /*Quectel EC25 GNSS Port Change*/
         /* GPS reference coordinates */
         "ref_latitude": 0.0,
         "ref_longitude": 0.0,

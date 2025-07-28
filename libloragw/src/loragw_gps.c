@@ -55,7 +55,7 @@ License: Revised BSD License, see LICENSE.TXT file include in the project
 #define TS_CPS              1E6 /* count-per-second of the timestamp counter */
 #define PLUS_10PPM          1.00001
 #define MINUS_10PPM         0.99999
-#define DEFAULT_BAUDRATE    B9600
+#define DEFAULT_BAUDRATE    B115200
 
 #define UBX_MSG_NAVTIMEGPS_LEN  16
 
@@ -535,7 +535,7 @@ enum gps_msg lgw_parse_nmea(const char *serial_buff, int buff_size) {
         memcpy(parser_buf, serial_buff, buff_size);
         parser_buf[buff_size] = '\0';
         nb_fields = str_chop(parser_buf, buff_size, ',', str_index, ARRAY_SIZE(str_index));
-        if (nb_fields != 13) {
+        if ( (nb_fields != 13) && (nb_fields != 14) ) {
             DEBUG_MSG("Warning: invalid RMC sentence (number of fields)\n");
             return IGNORED;
         }
